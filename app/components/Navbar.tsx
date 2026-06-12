@@ -38,8 +38,8 @@ export default function Navbar() {
             height={44}
             className="rounded-full object-cover"
           />
-          <span className="text-[#f5f0e8] font-bold text-lg tracking-wide hidden sm:inline">
-            Camping Castle Berat
+          <span className="text-[#f5f0e8] font-bold text-lg tracking-wide">
+            Camping The Castle Berat
           </span>
         </a>
 

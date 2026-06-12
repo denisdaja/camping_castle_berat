@@ -50,7 +50,7 @@ export default function About() {
         >
           <div className="relative w-full max-w-sm md:max-w-md">
             <Image
-              src="/images/logo_camping.webp"
+              src="/images/logo_camping (2).webp"
               alt="Camping Castle Berat Logo"
               width={420}
               height={420}

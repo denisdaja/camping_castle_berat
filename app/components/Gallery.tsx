@@ -4,34 +4,32 @@ import { useState } from "react";
 import Image from "next/image";
 
 const photos = [
-  { id: 1, src: "/images/gallery-1.webp", alt: "Camping Castle Berat", label: "The Campsite", aspect: "tall" },
-  { id: 2, src: "/images/gallery-2.webp", alt: "Camping Castle Berat", label: "Views & Nature", aspect: "wide" },
-  { id: 3, src: "/images/gallery-3.webp", alt: "Camping Castle Berat", label: "Around the Camp", aspect: "square" },
-  { id: 4, src: "/images/gallery-4.webp", alt: "Camping Castle Berat", label: "Castle & History", aspect: "wide" },
-  { id: 5, src: "/images/gallery-5.webp", alt: "Camping Castle Berat", label: "Life at the Camp", aspect: "square" },
+  { id: 1, src: "/images/gallery-1.webp", alt: "Camping Castle Berat" },
+  { id: 2, src: "/images/gallery-2.webp", alt: "Camping Castle Berat" },
+  { id: 3, src: "/images/gallery-3.webp", alt: "Camping Castle Berat" },
+  { id: 4, src: "/images/gallery-4.webp", alt: "Camping Castle Berat" },
+  { id: 5, src: "/images/gallery-5.webp", alt: "Camping Castle Berat" },
 ];
 
 export default function Gallery() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-24 px-6 bg-[#f5f0e8]">
+    <section id="gallery" className="py-24 px-6 bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-[#5a6b3a] text-sm tracking-[0.3em] uppercase mb-3">
+          <p className="text-[#a8c48a] text-sm tracking-[0.3em] uppercase mb-3">
             See It For Yourself
           </p>
-          <h2 className="text-4xl font-bold text-[#3d2b1f]">Gallery</h2>
+          <h2 className="text-4xl font-bold text-[#f5f0e8]">Gallery</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {photos.map((photo, i) => (
             <div
               key={photo.id}
               className="relative overflow-hidden rounded-lg cursor-pointer group"
-              style={{
-                aspectRatio: photo.aspect === "tall" ? "3/4" : photo.aspect === "wide" ? "4/3" : "1",
-              }}
+              style={{ aspectRatio: "4/3", minHeight: 280 }}
               onClick={() => setActive(i)}
             >
               <Image
@@ -41,10 +39,7 @@ export default function Gallery() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                <p className="text-white text-sm font-semibold">{photo.label}</p>
-              </div>
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
             </div>
           ))}
         </div>

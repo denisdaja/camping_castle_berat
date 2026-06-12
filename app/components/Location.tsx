@@ -33,8 +33,8 @@ export default function Location() {
               <h4 className="font-bold text-[#3d2b1f] mb-3">Address</h4>
               <p className="text-[#6b5344] text-sm leading-relaxed">
                 Camping &ldquo;The Castle of Berat&rdquo;<br />
-                Gorica Quarter, Berat 5001<br />
-                Albania<br />
+                Muzak Topia Street, Gorica Quarter<br />
+                Berat 5001, Albania<br />
                 <br />
                 <span className="block">📍 40.7204178, 19.9491626</span>
               </p>

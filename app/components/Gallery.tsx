@@ -1,24 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
-// Placeholder gallery items — replace src with real images
 const photos = [
-  { id: 1, src: "", alt: "Berat Castle at sunrise", label: "Castle at Sunrise", aspect: "tall" },
-  { id: 2, src: "", alt: "Campfire under the stars", label: "Campfire Nights", aspect: "wide" },
-  { id: 3, src: "", alt: "Tent pitch with castle view", label: "Tent Pitches", aspect: "square" },
-  { id: 4, src: "", alt: "Glamping platform view", label: "Glamping Platforms", aspect: "wide" },
-  { id: 5, src: "", alt: "Stone bungalow terrace", label: "Stone Bungalows", aspect: "square" },
-  { id: 6, src: "", alt: "Osum river morning", label: "Osum River", aspect: "tall" },
-];
-
-const bgColors = [
-  "#5a6b3a",
-  "#4a3728",
-  "#8b7d6b",
-  "#2d3e1f",
-  "#6b5344",
-  "#3d5a34",
+  { id: 1, src: "/images/gallery-1.webp", alt: "Camping Castle Berat", label: "The Campsite", aspect: "tall" },
+  { id: 2, src: "/images/gallery-2.webp", alt: "Camping Castle Berat", label: "Views & Nature", aspect: "wide" },
+  { id: 3, src: "/images/gallery-3.webp", alt: "Camping Castle Berat", label: "Around the Camp", aspect: "square" },
+  { id: 4, src: "/images/gallery-4.webp", alt: "Camping Castle Berat", label: "Castle & History", aspect: "wide" },
+  { id: 5, src: "/images/gallery-5.webp", alt: "Camping Castle Berat", label: "Life at the Camp", aspect: "square" },
 ];
 
 export default function Gallery() {
@@ -44,10 +34,12 @@ export default function Gallery() {
               }}
               onClick={() => setActive(i)}
             >
-              {/* Placeholder colour block until real photos are added */}
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{ background: bgColors[i] }}
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
@@ -70,11 +62,16 @@ export default function Gallery() {
               ✕
             </button>
             <div
-              className="w-full max-w-2xl aspect-video rounded-lg flex items-center justify-center"
-              style={{ background: bgColors[active] }}
+              className="relative w-full max-w-3xl aspect-video rounded-lg overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <p className="text-white text-xl font-bold">{photos[active].label}</p>
+              <Image
+                src={photos[active].src}
+                alt={photos[active].alt}
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
             </div>
             <button
               className="absolute left-6 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-[#d4b896]"
@@ -90,10 +87,6 @@ export default function Gallery() {
             </button>
           </div>
         )}
-
-        <p className="text-center text-[#8b7d6b] text-sm mt-8">
-          📸 Real photos coming soon — contact us or follow us on Instagram.
-        </p>
       </div>
     </section>
   );

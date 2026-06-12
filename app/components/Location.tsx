@@ -38,7 +38,7 @@ export default function Location() {
               title="Camping Castle Berat Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.!2d20.0!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fcb7f5d4f0eb7%3A0x4b62a3bf3c9e3a0!2sBerat%2C%20Albania!5e0!3m2!1sen!2s!4v1"
               width="100%"
-              height="380"
+              height="300"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

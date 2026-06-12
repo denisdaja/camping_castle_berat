@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const stats = [
   { value: "2,400+", label: "Years of History" },
@@ -26,56 +27,40 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-20 md:py-28 px-6"
       style={{ background: "#f5f0e8" }}
     >
       {/* Decorative background text */}
       <div
-        className="absolute right-[-40px] top-1/2 -translate-y-1/2 select-none pointer-events-none font-bold uppercase whitespace-nowrap"
-        style={{
-          fontSize: "clamp(80px,15vw,160px)",
-          color: "rgba(61,43,31,0.04)",
-          letterSpacing: "0.1em",
-        }}
+        className="absolute right-[-40px] top-1/2 -translate-y-1/2 select-none pointer-events-none font-bold uppercase whitespace-nowrap hidden md:block"
+        style={{ fontSize: "clamp(80px,15vw,160px)", color: "rgba(61,43,31,0.04)", letterSpacing: "0.1em" }}
       >
         BERAT
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 about-grid grid gap-16 items-center" style={{ gridTemplateColumns: "1fr 1fr" }}>
-        {/* Logo / image side */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        {/* Logo */}
         <div
+          className="flex items-center justify-center"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateX(0)" : "translateX(-40px)",
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
-          className="flex items-center justify-center"
         >
-          {/* Replace with <Image src="/images/logo_camping.webp" ...> when logo is ready */}
-          <div
-            className="relative w-full flex items-center justify-center rounded"
-            style={{
-              maxWidth: 420,
-              aspectRatio: "1",
-              background: "#ede6d9",
-              border: "2px dashed #d4b896",
-            }}
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-4">⛺</div>
-              <p className="text-sm tracking-widest uppercase" style={{ color: "#8b7d6b" }}>
-                Logo coming soon
-              </p>
-            </div>
-            {/* Offset border accent */}
-            <div
-              className="absolute rounded pointer-events-none"
-              style={{ inset: 0, border: "2px solid #d4b896", transform: "translate(10px, 10px)" }}
+          <div className="relative w-full max-w-sm md:max-w-md">
+            <Image
+              src="/images/logo_camping.webp"
+              alt="Camping Castle Berat Logo"
+              width={420}
+              height={420}
+              className="w-full h-auto object-contain"
+              sizes="(max-width: 768px) 80vw, 40vw"
             />
           </div>
         </div>
 
-        {/* Text side */}
+        {/* Text */}
         <div
           style={{
             opacity: visible ? 1 : 0,
@@ -84,13 +69,12 @@ export default function About() {
           }}
         >
           <p className="text-[#5a6b3a] text-sm tracking-[0.3em] uppercase mb-3">Our Story</p>
-          <h2 className="text-4xl font-bold leading-snug mb-4" style={{ color: "#3d2b1f" }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4" style={{ color: "#3d2b1f" }}>
             Where Ancient Walls<br />
             <em className="not-italic" style={{ color: "#d4b896" }}>Meet Open Skies</em>
           </h2>
           <div className="w-12 h-[2px] mb-6" style={{ background: "#d4b896" }} />
-
-          <p className="text-sm leading-[1.9] mb-5" style={{ color: "#6b5344" }}>
+          <p className="text-sm leading-[1.9] mb-4" style={{ color: "#6b5344" }}>
             Welcome to Camping Castle Berat, your peaceful escape at the foot of one of
             Albania's most iconic landmarks. Surrounded by nature and nestled in the historic
             Gorica quarter, our campsite is the perfect base for travellers seeking relaxation,
@@ -105,16 +89,12 @@ export default function About() {
 
           {/* Stats */}
           <div
-            className="grid pt-8"
-            style={{
-              gridTemplateColumns: "1fr 1fr",
-              gap: "20px 32px",
-              borderTop: "1px solid #e0d5c5",
-            }}
+            className="grid grid-cols-2 gap-5 pt-8"
+            style={{ borderTop: "1px solid #e0d5c5" }}
           >
             {stats.map((s, i) => (
               <div key={i}>
-                <span className="block text-3xl font-bold leading-none mb-1" style={{ color: "#5a6b3a" }}>
+                <span className="block text-2xl md:text-3xl font-bold leading-none mb-1" style={{ color: "#5a6b3a" }}>
                   {s.value}
                 </span>
                 <span className="text-xs tracking-[0.06em]" style={{ color: "#8b7d6b" }}>
@@ -125,12 +105,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-        }
-      `}</style>
     </section>
   );
 }

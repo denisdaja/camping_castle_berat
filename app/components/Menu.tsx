@@ -4,48 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const dishes = [
-  {
-    id: 1,
-    name: "Homemade Pie",
-    subtitle: "Byrek Shtëpiak",
-    description: "Thin hand-rolled pastry filled with spinach and local white cheese, slowly baked to golden perfection. A staple of traditional Albanian home cooking.",
-    image: "/images/home_pie.jpeg",
-  },
-  {
-    id: 2,
-    name: "Stuffed Peppers",
-    subtitle: "Speca të Mbushur",
-    description: "Fresh peppers filled with seasoned rice, local herbs and cheese, slow-cooked in a pot. A true classic of the Berat table, rich in authentic flavour.",
-    image: "/images/stuffed_peppers.webp",
-  },
-  {
-    id: 3,
-    name: "Village Salad",
-    subtitle: "Sallatë Fshati",
-    description: "Sun-ripened tomatoes and cucumbers from local gardens, green peppers, red onion and crumbled local white cheese. Simple, wholesome and authentic.",
-    image: "/images/village_salad.webp",
-  },
-  {
-    id: 4,
-    name: "Crispy Potatoes",
-    subtitle: "Patate të Skuqura",
-    description: "Golden and crunchy fried potatoes, served as a side alongside grilled meats and traditional Albanian specialities fresh from the grill.",
-    image: "/images/french_fries.jpeg",
-  },
-  {
-    id: 5,
-    name: "Fresh Seasonal Fruits",
-    subtitle: "Fruta të Freskëta",
-    description: "Hand-picked seasonal fruits from the orchards surrounding Berat — peaches, figs, grapes and watermelon. A sweet and pure taste of Albanian nature.",
-    image: "/images/fruits.jpeg",
-  },
-  {
-    id: 6,
-    name: "Sour Cream",
-    subtitle: "Kos Shtëpiak",
-    description: "Thick and creamy homemade sour cream prepared with fresh local milk — served as a side with traditional dishes or enjoyed on its own.",
-    image: "/images/sour-cream.jpeg",
-  },
+  { id: 1, name: "Homemade Pie", subtitle: "Byrek Shtëpiak", description: "Thin hand-rolled pastry filled with spinach and local white cheese, slowly baked to golden perfection. A staple of traditional Albanian home cooking.", image: "/images/home_pie.jpeg" },
+  { id: 2, name: "Stuffed Peppers", subtitle: "Speca të Mbushur", description: "Fresh peppers filled with seasoned rice, local herbs and cheese, slow-cooked in a pot. A true classic of the Berat table, rich in authentic flavour.", image: "/images/stuffed_peppers.webp" },
+  { id: 3, name: "Village Salad", subtitle: "Sallatë Fshati", description: "Sun-ripened tomatoes and cucumbers from local gardens, green peppers, red onion and crumbled local white cheese. Simple, wholesome and authentic.", image: "/images/village_salad.webp" },
+  { id: 4, name: "Crispy Potatoes", subtitle: "Patate të Skuqura", description: "Golden and crunchy fried potatoes, served as a side alongside grilled meats and traditional Albanian specialities fresh from the grill.", image: "/images/french_fries.jpeg" },
+  { id: 5, name: "Fresh Seasonal Fruits", subtitle: "Fruta të Freskëta", description: "Hand-picked seasonal fruits from the orchards surrounding Berat — peaches, figs, grapes and watermelon. A sweet and pure taste of Albanian nature.", image: "/images/fruits.jpeg" },
+  { id: 6, name: "Sour Cream", subtitle: "Kos Shtëpiak", description: "Thick and creamy homemade sour cream prepared with fresh local milk — served as a side with traditional dishes or enjoyed on its own.", image: "/images/sour-cream.jpeg" },
 ];
 
 export default function Menu() {
@@ -65,26 +29,22 @@ export default function Menu() {
     <section
       id="menu"
       ref={ref}
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-20 md:py-28 px-6"
       style={{ background: "#f5f0e8" }}
     >
       {/* Decorative background text */}
       <div
-        className="absolute left-[-40px] top-1/2 -translate-y-1/2 select-none pointer-events-none font-bold uppercase whitespace-nowrap"
-        style={{
-          fontSize: "clamp(80px,15vw,160px)",
-          color: "rgba(61,43,31,0.04)",
-          letterSpacing: "0.1em",
-        }}
+        className="absolute left-[-40px] top-1/2 -translate-y-1/2 select-none pointer-events-none font-bold uppercase whitespace-nowrap hidden md:block"
+        style={{ fontSize: "clamp(80px,15vw,160px)", color: "rgba(61,43,31,0.04)", letterSpacing: "0.1em" }}
       >
         MENU
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <p className="text-[#5a6b3a] text-sm tracking-[0.3em] uppercase mb-3">Our Kitchen</p>
-          <h2 className="text-4xl font-bold" style={{ color: "#3d2b1f" }}>
+          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#3d2b1f" }}>
             Traditional{" "}
             <em className="not-italic" style={{ color: "#8b5e3c" }}>Albanian Flavours</em>
           </h2>
@@ -95,10 +55,7 @@ export default function Menu() {
         </div>
 
         {/* Dish cards */}
-        <div
-          className="grid gap-[2px] mb-[2px]"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px] mb-[2px]">
           {dishes.map((dish, i) => (
             <div
               key={dish.id}
@@ -112,28 +69,24 @@ export default function Menu() {
               }}
             >
               {/* Photo */}
-              <div className="relative shrink-0" style={{ width: 160, minWidth: 160 }}>
+              <div className="relative shrink-0" style={{ width: 130, minWidth: 130 }}>
                 <Image
                   src={dish.image}
                   alt={dish.name}
                   fill
-                  style={{ objectFit: "cover" }}
-                  sizes="160px"
+                  className="object-cover"
+                  sizes="130px"
                 />
               </div>
-
               {/* Text */}
-              <div className="flex flex-col justify-center px-6 py-5">
-                <span
-                  className="block text-[10px] font-medium tracking-[0.18em] uppercase mb-1.5"
-                  style={{ color: "#8b5e3c" }}
-                >
+              <div className="flex flex-col justify-center px-4 py-4">
+                <span className="block text-[10px] font-medium tracking-[0.18em] uppercase mb-1" style={{ color: "#8b5e3c" }}>
                   {dish.subtitle}
                 </span>
-                <h3 className="text-xl font-bold leading-snug mb-2" style={{ color: "#3d2b1f" }}>
+                <h3 className="text-base font-bold leading-snug mb-1.5" style={{ color: "#3d2b1f" }}>
                   {dish.name}
                 </h3>
-                <p className="text-sm leading-[1.7]" style={{ color: "#6b5344" }}>
+                <p className="text-xs leading-[1.7]" style={{ color: "#6b5344" }}>
                   {dish.description}
                 </p>
               </div>
@@ -143,9 +96,8 @@ export default function Menu() {
 
         {/* Local products feature */}
         <div
-          className="grid mt-14 overflow-hidden local-products-grid"
+          className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] mt-14 overflow-hidden rounded-lg"
           style={{
-            gridTemplateColumns: "1fr 1.4fr",
             background: "#3d2b1f",
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(30px)",
@@ -153,54 +105,39 @@ export default function Menu() {
           }}
         >
           {/* Photo */}
-          <div className="relative" style={{ minHeight: 320 }}>
+          <div className="relative" style={{ minHeight: 240 }}>
             <Image
               src="/images/local_prouct.webp"
               alt="Local Products from Berat"
               fill
-              style={{ objectFit: "cover" }}
+              className="object-cover"
               sizes="(max-width: 768px) 100vw, 40vw"
             />
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 hidden md:block"
               style={{ background: "linear-gradient(to right, transparent 60%, #3d2b1f 100%)" }}
             />
           </div>
-
           {/* Text */}
-          <div className="flex flex-col justify-center px-12 py-12">
-            <span
-              className="block text-[10px] font-medium tracking-[0.22em] uppercase mb-4"
-              style={{ color: "#d4b896" }}
-            >
+          <div className="flex flex-col justify-center px-8 md:px-12 py-10">
+            <span className="block text-[10px] font-medium tracking-[0.22em] uppercase mb-4" style={{ color: "#d4b896" }}>
               Shop Local
             </span>
-            <h3 className="text-3xl font-bold leading-snug mb-4" style={{ color: "#f5f0e8" }}>
+            <h3 className="text-2xl md:text-3xl font-bold leading-snug mb-4" style={{ color: "#f5f0e8" }}>
               Local Products <br />
-              <em className="not-italic font-light text-2xl" style={{ color: "rgba(245,240,232,0.65)" }}>
-                from Berat
-              </em>
+              <em className="not-italic font-light text-xl md:text-2xl" style={{ color: "rgba(245,240,232,0.65)" }}>from Berat</em>
             </h3>
             <p className="text-sm leading-[1.9] mb-7 max-w-md" style={{ color: "rgba(245,240,232,0.65)" }}>
-              Straight from the land of Berat — we offer a curated selection of the finest local
-              products:{" "}
-              <strong style={{ color: "rgba(245,240,232,0.9)" }}>cold-pressed olive oil</strong> from
-              centuries-old groves,{" "}
-              <strong style={{ color: "rgba(245,240,232,0.9)" }}>local white and red wine</strong> from
-              the region&apos;s vineyards,{" "}
-              <strong style={{ color: "rgba(245,240,232,0.9)" }}>Gliko Berati</strong> — a traditional
-              candied fruit preserve, and homemade{" "}
+              Straight from the land of Berat —{" "}
+              <strong style={{ color: "rgba(245,240,232,0.9)" }}>cold-pressed olive oil</strong>,{" "}
+              <strong style={{ color: "rgba(245,240,232,0.9)" }}>local white and red wine</strong>,{" "}
+              <strong style={{ color: "rgba(245,240,232,0.9)" }}>Gliko Berati</strong> — a traditional candied fruit preserve, homemade{" "}
               <strong style={{ color: "rgba(245,240,232,0.9)" }}>fruit jam</strong> and{" "}
-              <strong style={{ color: "rgba(245,240,232,0.9)" }}>compote</strong> crafted with recipes
-              passed down through generations.
+              <strong style={{ color: "rgba(245,240,232,0.9)" }}>compote</strong> crafted with recipes passed down through generations.
             </p>
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2">
               {["Olive Oil", "Local Wine", "Gliko Berati", "Fruit Jam", "Compote"].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] font-medium tracking-[0.14em] uppercase px-3.5 py-1.5"
-                  style={{ color: "#d4b896", border: "1px solid rgba(212,184,150,0.4)" }}
-                >
+                <span key={tag} className="text-[10px] font-medium tracking-[0.14em] uppercase px-3 py-1.5" style={{ color: "#d4b896", border: "1px solid rgba(212,184,150,0.4)" }}>
                   {tag}
                 </span>
               ))}
@@ -208,12 +145,6 @@ export default function Menu() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .local-products-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

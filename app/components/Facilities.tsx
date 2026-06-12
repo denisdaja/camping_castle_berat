@@ -33,7 +33,7 @@ export default function Facilities() {
     <section
       id="facilities"
       ref={ref}
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-20 md:py-28"
       style={{ background: "#3d2b1f" }}
     >
       {/* Decorative top accent */}
@@ -44,10 +44,10 @@ export default function Facilities() {
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-20 mb-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mb-16 md:mb-20 items-center">
           <div>
             <p className="text-[#a8c48a] text-sm tracking-[0.3em] uppercase mb-3">What We Offer</p>
-            <h2 className="text-4xl font-bold leading-snug mb-4" style={{ color: "#f5f0e8" }}>
+            <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4" style={{ color: "#f5f0e8" }}>
               Everything You Need,{" "}
               <em className="not-italic" style={{ color: "#d4b896" }}>Nothing You Don&apos;t</em>
             </h2>
@@ -61,12 +61,12 @@ export default function Facilities() {
 
           {/* Photo */}
           <div className="relative">
-            <div className="relative h-64 md:h-72 overflow-hidden rounded">
+            <div className="relative overflow-hidden rounded" style={{ height: 280 }}>
               <Image
                 src="/images/facilities_photo.jpg"
                 alt="Campsite facilities"
                 fill
-                style={{ objectFit: "cover" }}
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -78,13 +78,10 @@ export default function Facilities() {
         </div>
 
         {/* Facilities grid */}
-        <div
-          className="grid gap-[2px]"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}
-        >
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-[2px]">
           {facilities.map((f, i) => {
             const base: React.CSSProperties = {
-              padding: "32px 24px",
+              padding: "28px 20px",
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.08)",
               textAlign: "center",
@@ -108,7 +105,7 @@ export default function Facilities() {
 
             const inner = (
               <>
-                <span className="text-[32px] block mb-3">{f.icon}</span>
+                <span className="text-3xl block mb-3">{f.icon}</span>
                 <h3 className="text-xs font-medium tracking-[0.08em] uppercase mb-2" style={{ color: "#f5f0e8" }}>
                   {f.title}
                 </h3>

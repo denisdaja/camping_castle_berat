@@ -99,12 +99,12 @@ export default function Destinations() {
         style={{ background: "linear-gradient(90deg, transparent, #d4b896, transparent)" }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 py-28">
+      <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         {/* Header */}
-        <div className="flex justify-between items-end flex-wrap gap-6 mb-16">
+        <div className="flex justify-between items-end flex-wrap gap-6 mb-12 md:mb-16">
           <div>
             <p className="text-[#a8c48a] text-sm tracking-[0.3em] uppercase mb-3">Explore Berat</p>
-            <h2 className="text-4xl font-bold" style={{ color: "#f5f0e8" }}>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#f5f0e8" }}>
               Activities &{" "}
               <em className="not-italic" style={{ color: "#d4b896" }}>Experiences</em>
             </h2>
@@ -116,16 +116,13 @@ export default function Destinations() {
         </div>
 
         {/* Grid */}
-        <div
-          className="grid gap-[2px]"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {destinations.map((dest, i) => (
             <article
               key={dest.id}
               className="relative overflow-hidden cursor-pointer"
               style={{
-                height: 380,
+                height: "clamp(260px, 40vw, 380px)",
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateY(0)" : "translateY(40px)",
                 transition: `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`,

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const facilities = [
   { id: 1, icon: "📶", title: "Free WiFi", description: "High-speed internet throughout the campsite" },
@@ -58,15 +59,16 @@ export default function Facilities() {
             </p>
           </div>
 
-          {/* Photo placeholder */}
+          {/* Photo */}
           <div className="relative">
-            <div
-              className="relative h-64 md:h-72 overflow-hidden rounded"
-              style={{ background: "#5a6b3a" }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[#f5f0e8]/40 text-sm tracking-widest uppercase">Facilities Photo</span>
-              </div>
+            <div className="relative h-64 md:h-72 overflow-hidden rounded">
+              <Image
+                src="/images/facility_phto.jpg"
+                alt="Campsite facilities"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div
               className="absolute inset-0 rounded pointer-events-none"

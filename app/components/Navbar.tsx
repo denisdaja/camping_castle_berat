@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -29,8 +30,17 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="text-[#f5f0e8] font-bold text-xl tracking-wide">
-          ⛺ Camping Castle Berat
+        <a href="#home" className="flex items-center gap-3">
+          <Image
+            src="/images/logo_camping (2).webp"
+            alt="Camping Castle Berat"
+            width={44}
+            height={44}
+            className="rounded-full object-cover"
+          />
+          <span className="text-[#f5f0e8] font-bold text-lg tracking-wide hidden sm:inline">
+            Camping Castle Berat
+          </span>
         </a>
 
         {/* Desktop links */}

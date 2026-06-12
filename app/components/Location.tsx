@@ -35,8 +35,6 @@ export default function Location() {
                 Camping &ldquo;The Castle of Berat&rdquo;<br />
                 Muzak Topia Street, Castle<br />
                 Berat 5001, Albania<br />
-                <br />
-                <span className="block">📍 40.7204178, 19.9491626</span>
               </p>
               <a
                 href="https://www.google.com/maps/place/Camping+%22The+Castle+of+Berat%22/@40.7204178,19.9491626,17z"

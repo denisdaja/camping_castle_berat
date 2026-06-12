@@ -82,11 +82,7 @@ export default function Hero() {
           <br />
           <span className="text-[#d4b896]">the Castle</span>
         </h1>
-        <p className="text-[#c4b49a] text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto">
-          Wake up to the ancient walls of Berat Castle rising above you. A nature
-          retreat in UNESCO's City of a Thousand Windows.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#gallery"
             className="px-8 py-3 bg-[#5a6b3a] text-[#f5f0e8] rounded font-semibold tracking-wide hover:bg-[#4a5a2e] transition-colors"

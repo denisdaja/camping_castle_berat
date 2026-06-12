@@ -1,20 +1,3 @@
-const howToGet = [
-  {
-    icon: "🚗",
-    method: "By Car",
-    desc: "2.5 hours from Tirana via the SH4 highway south through Elbasan. Free parking on-site.",
-  },
-  {
-    icon: "🚌",
-    method: "By Bus",
-    desc: "Daily buses from Tirana's Kombinat terminal to Berat (approx. 3h). We'll pick you up from the bus station.",
-  },
-  {
-    icon: "✈️",
-    method: "By Plane",
-    desc: "Fly into Tirana International Airport (TIA), then take a bus or rent a car to Berat — about 2.5 hours.",
-  },
-];
 
 export default function Location() {
   return (
@@ -44,21 +27,8 @@ export default function Location() {
             />
           </div>
 
-          {/* Getting here */}
+          {/* Address */}
           <div>
-            <h3 className="text-2xl font-bold text-[#3d2b1f] mb-6">Getting Here</h3>
-            <div className="space-y-6 mb-10">
-              {howToGet.map((item) => (
-                <div key={item.method} className="flex gap-4">
-                  <span className="text-2xl mt-1">{item.icon}</span>
-                  <div>
-                    <h4 className="font-bold text-[#3d2b1f] mb-1">{item.method}</h4>
-                    <p className="text-[#6b5344] text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <div className="bg-white border border-[#e0d5c5] rounded-lg p-6">
               <h4 className="font-bold text-[#3d2b1f] mb-3">Address</h4>
               <p className="text-[#6b5344] text-sm leading-relaxed">

@@ -63,7 +63,7 @@ export default function Facilities() {
           <div className="relative">
             <div className="relative h-64 md:h-72 overflow-hidden rounded">
               <Image
-                src="/images/facility_photo.jpg"
+                src="/images/facilities_photo.jpg"
                 alt="Campsite facilities"
                 fill
                 style={{ objectFit: "cover" }}

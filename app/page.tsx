@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Accommodation from "./components/Accommodation";
+import Facilities from "./components/Facilities";
 import Gallery from "./components/Gallery";
 import Location from "./components/Location";
 import Contact from "./components/Contact";
@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Accommodation />
+        <Facilities />
         <Gallery />
         <Location />
         <Contact />

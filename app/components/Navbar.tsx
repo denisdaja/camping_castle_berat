@@ -39,7 +39,7 @@ export default function Navbar() {
             className="rounded-full object-cover"
           />
           <span className="text-[#f5f0e8] font-bold text-lg tracking-wide">
-            Camping The Castle Berat
+            Camping The Castle
           </span>
         </a>
 

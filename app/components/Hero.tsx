@@ -88,7 +88,7 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#accommodation"
+            href="#gallery"
             className="px-8 py-3 bg-[#5a6b3a] text-[#f5f0e8] rounded font-semibold tracking-wide hover:bg-[#4a5a2e] transition-colors"
           >
             Explore Stays

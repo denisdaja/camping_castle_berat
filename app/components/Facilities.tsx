@@ -8,7 +8,7 @@ const facilities = [
   { id: 3, icon: "⛺", title: "Tent Area", description: "Shaded, level pitches among olive trees" },
   { id: 4, icon: "🚐", title: "Camper Parking", description: "Full hook-up camper van spots with electricity" },
   { id: 5, icon: "🚿", title: "Hot Showers", description: "Clean private shower facilities, 24/7 hot water" },
-  { id: 6, icon: "🍴", title: "Restaurant", description: "On-site traditional Albanian cuisine and grill", href: "#contact" },
+  { id: 6, icon: "🍴", title: "Restaurant", description: "On-site traditional Albanian cuisine and grill", href: "#menu" },
   { id: 7, icon: "🚕", title: "Taxi Service", description: "Convenient transportation to destinations & activities", href: "#destination" },
   { id: 8, icon: "🏕️", title: "Outdoor Activities", description: "Equipment rental and guided excursion booking" },
   { id: 9, icon: "🏰", title: "Castle Views", description: "Unobstructed panorama of Berat Castle walls" },

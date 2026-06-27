@@ -76,7 +76,7 @@ export default function About() {
           <div className="w-12 h-[2px] mb-6" style={{ background: "#d4b896" }} />
           <p className="text-sm leading-[1.9] mb-4" style={{ color: "#6b5344" }}>
             Welcome to Camping Castle Berat, your peaceful escape at the foot of one of
-            Albania's most iconic landmarks. Surrounded by nature and nestled in the historic
+            Albania&apos;s most iconic landmarks. Surrounded by nature and nestled in the historic
             Gorica quarter, our campsite is the perfect base for travellers seeking relaxation,
             adventure, and authentic Albanian hospitality.
           </p>

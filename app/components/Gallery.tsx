@@ -52,6 +52,7 @@ export default function Gallery() {
             <button
               className="absolute top-4 right-4 md:top-6 md:right-6 text-white text-3xl hover:text-[#d4b896] transition-colors z-10"
               onClick={() => setActive(null)}
+              aria-label="Close"
             >
               ✕
             </button>
@@ -71,12 +72,14 @@ export default function Gallery() {
             <button
               className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 text-white text-4xl md:text-5xl hover:text-[#d4b896] transition-colors z-10 leading-none"
               onClick={(e) => { e.stopPropagation(); setActive((active - 1 + photos.length) % photos.length); }}
+              aria-label="Previous photo"
             >
               ‹
             </button>
             <button
               className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 text-white text-4xl md:text-5xl hover:text-[#d4b896] transition-colors z-10 leading-none"
               onClick={(e) => { e.stopPropagation(); setActive((active + 1) % photos.length); }}
+              aria-label="Next photo"
             >
               ›
             </button>

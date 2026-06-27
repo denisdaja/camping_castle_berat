@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     icon: "/images/logo_camping (2).webp",
     apple: "/images/logo_camping (2).webp",
   },
+  verification: {
+    google: "DC9yxW1BtHR1UTCTyh9HZSmvTMlMSPI5UROHLZJjwVw",
+  },
 };
 
 export default function RootLayout({

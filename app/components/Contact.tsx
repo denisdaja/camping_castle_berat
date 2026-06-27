@@ -58,7 +58,7 @@ export default function Contact() {
             <div className="flex flex-col gap-5 mb-10">
               {[
                 { label: "Location", value: "Muzak Topia Street, Castle, Berat, Albania" },
-                { label: "Phone", value: "+355 68 421 1666", href: "tel:+355684211666" },
+                { label: "Phone", value: "+355 68 520 4000", href: "tel:+355685204000" },
                 { label: "Email", value: "campingthecastleberat@gmail.com", href: "mailto:campingthecastleberat@gmail.com" },
               ].map((c) => (
                 <div key={c.label} className="flex gap-4 items-start">
@@ -76,7 +76,7 @@ export default function Contact() {
 
             {/* WhatsApp button */}
             <a
-              href="https://wa.me/355684211666?text=Hello%2C%20I%27d%20like%20to%20book%20at%20Camping%20The%20Castle%20Berat"
+              href="https://wa.me/355685204000?text=Hello%2C%20I%27d%20like%20to%20book%20at%20Camping%20The%20Castle%20Berat"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-white text-xs font-medium tracking-[0.08em] uppercase px-7 py-3.5 mb-10 transition-colors"
